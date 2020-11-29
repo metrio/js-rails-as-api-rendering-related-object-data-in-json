@@ -1,9 +1,6 @@
-class BirdsController < ApplicationController
-  
-  def index
-    @birds = Bird.all
-    render json: @birds
-  end
+class Sighting < ApplicationRecord
+  belongs_to :bird
+  belongs_to :location
 
   def show
     sighting = Sighting.find_by(id: params[:id])

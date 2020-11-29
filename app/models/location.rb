@@ -1,6 +1,6 @@
-class Bird < ApplicationRecord
+class Location < ApplicationRecord
     has_many :sightings
-    has_many :locations, through: :sightings
+    has_many :birds, through: :sightings
 
     def show
         sighting = Sighting.find_by(id: params[:id])
